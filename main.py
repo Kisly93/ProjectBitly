@@ -7,7 +7,7 @@ import argparse
 API_URL = "https://api-ssl.bitly.com"
 
 
-def createParse():
+def create_parse():
     parser = argparse.ArgumentParser(
         description='Введите сайт или сокращенную ссылку'
     )
@@ -60,7 +60,7 @@ def is_bitlink(bitly_token, long_url):
 def main():
     load_dotenv()
     bitly_token = os.getenv('BITLY_TOKEN')
-    parser = createParse()
+    parser = create_parse()
     args = parser.parse_args()
     long_url = args.name
     try:
