@@ -2,10 +2,12 @@ import requests
 from urllib.parse import urlparse
 import os
 from dotenv import load_dotenv
+
 load_dotenv()
 import argparse
 
 API_URL = "https://api-ssl.bitly.com"
+
 
 def createParse():
     parser = argparse.ArgumentParser(
@@ -13,7 +15,6 @@ def createParse():
     )
     parser.add_argument('name')
     return parser
-
 
 
 def shorten_link(bitly_token, long_url):
@@ -56,7 +57,6 @@ def is_bitlink(bitly_token, long_url):
     }
     response = requests.get(url, headers=headers)
     return response.ok
-
 
 
 def main():
